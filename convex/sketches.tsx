@@ -1,10 +1,11 @@
 import {mutation, query} from './_generated/server'
 
 export const saveSketch = mutation(
-    async({db},{prompt}:{prompt:string})=>{
+    async({db},{prompt,image}:{prompt:string,image:string})=>{
         console.log(prompt);
         await db.insert("sketches",{
-            prompt
+            prompt,
+            
         })
         return {
             message:"success",
